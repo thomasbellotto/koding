@@ -20,7 +20,14 @@
                 Submit new Answers
                 </button>
             </div>
-        
+            
+            <br />
+            <br />
+            
+            <% if @question.answers.empty? %>
+                <div class="alert alert-info"> No posted answers yet. Be the first to respond.  </div>
+            <% end %>
+            
             <%= render 'home/new_answer_form' %>
         
             <% @question.answers.each do |answer| %>
